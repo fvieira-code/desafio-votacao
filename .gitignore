@@ -1,0 +1,22 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Build
+/target/
+/build/
+
+# Maven
+.mvn/
+.settings/
+dependency-reduced-pom.xml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env

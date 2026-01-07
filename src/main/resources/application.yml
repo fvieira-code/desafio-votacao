@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: slicing-mgmt-system
+  docker:
+    compose:
+      enabled: false
+  logging:
+    level:
+      org.springframework.boot.docker.compose: TRACE
+      org.springframework.security: DEBUG
+      org.springframework.security.web.FilterChainProxy: DEBUG
+  security:
+    user:
+      name: admin
+      password: admin
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:mysql://localhost:3307/db-slicing-mgmt-system?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: Lui$05012013
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+      format_sql: true
+    open-in-view: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  sql:
+    init:
+      mode: always
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 8080
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  use-management-port: false
+token:
+  signing:
+    key: a2FsaWJyYXRvcmlhLWNoYXZlLWRlLTMyLWJ5dGVzLXVzYWRhcGFyYS1zcHJpbmc=
+  expiration:
+    minutes: 10
