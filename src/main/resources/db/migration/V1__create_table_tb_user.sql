@@ -16,7 +16,7 @@ INSERT INTO tb_user (
 ) VALUES (
     'Admin',
     'Admin',
-    'admin@zukk.com.br',
+    'admin@dbserver.com.br',
     '$2a$10$3sdN/7.Nsp/hGVwovlx3XOxgaRfEBluQzLXGQuGm/8pO7zHQNLe.G',
     'ADMIN'
 );

@@ -1,6 +1,6 @@
 package br.com.dbserver.desafiovotacao.dto;
 
-import br.com.dbserver.desafiovotacao.model.Role;
+import br.com.dbserver.desafiovotacao.model.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

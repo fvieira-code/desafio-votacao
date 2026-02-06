@@ -11,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-	<groupId>br.com.zukk.vivo</groupId>
+	<groupId>br.com.dbserver.desafiovotacao</groupId>
 	<artifactId>desafio-votacao</artifactId>
     <version>1.0.0</version>
 	<name>desafio-votacao</name>
@@ -64,7 +64,7 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.5.0</version>
+            <version>2.6.0</version>
         </dependency>
 
         <!-- MySQL Connector -->

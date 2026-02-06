@@ -1,5 +1,6 @@
 package br.com.dbserver.desafiovotacao.model;
 
+import br.com.dbserver.desafiovotacao.model.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,7 +39,6 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        // email in our case
         return email;
     }
 

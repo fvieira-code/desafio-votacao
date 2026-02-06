@@ -7,7 +7,7 @@ import br.com.dbserver.desafiovotacao.dto.request.SigninRequest;
 import br.com.dbserver.desafiovotacao.dto.response.JwtAuthenticationResponse;
 import br.com.dbserver.desafiovotacao.exception.RecursoNaoEncontradoException;
 import br.com.dbserver.desafiovotacao.mapper.UserMapper;
-import br.com.dbserver.desafiovotacao.model.Role;
+import br.com.dbserver.desafiovotacao.model.enums.Role;
 import br.com.dbserver.desafiovotacao.model.User;
 import br.com.dbserver.desafiovotacao.repository.UserRepository;
 import br.com.dbserver.desafiovotacao.service.AuthenticationService;
