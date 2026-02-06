@@ -1,8 +1,8 @@
 
-# 📦 slicing-mgmt-system
+# 📦 Desafio Votação
 
-Sistema para controlar a quantidade de **clientes** em cada serviço de **Slice**, com autenticação JWT,
-executar a viabilidade técnica para a alocação de usuários em um network slicing. 
+Sistema **desafio votação**, com autenticação JWT, executar a viabilidade técnica para a alocação de usuários em um 
+network desafio-votacao. 
 **Desenvolvido com Java 17 e Spring Boot 3.**
 
 ---
@@ -37,15 +37,15 @@ executar a viabilidade técnica para a alocação de usuários em um network sli
 
 1. Clone o projeto:
    ```bash
-   git clone https://dev.azure.com/zukk-tecnologia/Slicing/_git/slicing-mgmt-system
+   git clone https://github.com/dbserver/desafio-votacao.git
    ```
 
 2. Crie o banco de dados manualmente no MySQL:
    ```sql
-   CREATE DATABASE db-slicing-mgmt-system CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+   CREATE DATABASE db-desafio-votacao CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
    ```
    ```sql
-   docker exec -it slicing-mgmt-system-mysql-1 mysql -uroot -p -e "CREATE DATABASE \`db-slicing-mgmt-system\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+   docker exec -it desafio-votacao-mysql-1 mysql -uroot -p -e "CREATE DATABASE \`db-desafio-votacao\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
    ```
    
 3. Configure seu `application.yml` com usuário e senha do banco:
@@ -55,7 +55,7 @@ executar a viabilidade técnica para a alocação de usuários em um network sli
    
    spring:
      datasource:
-       url: jdbc:mysql://localhost:[port]/db-slicing-mgmt-system
+       url: jdbc:mysql://localhost:[port]/db-desafio-votacao
        username: root
        password: sua_senha
    ```
@@ -65,7 +65,7 @@ executar a viabilidade técnica para a alocação de usuários em um network sli
    ```bash
      docker compose up -d 
    ```
-   - Pela IDE (classe `SlicingApplication`)
+   - Pela IDE (classe `DesafioVotacaoApplication`)
    - Ou pelo terminal:
      ```bash
      # Com Docker:
@@ -223,7 +223,7 @@ docker-compose up --build -d
 ## 📂 Estrutura de pacotes
 
 ```
-br.com.zukk.vivo.projectslicing
+br.com.dbserver.desafiovotacao
 ├── config           → configurações Swagger, segurança
 ├── controller       → REST controllers
 ├── dto              → Data Transfer Objects
@@ -235,7 +235,7 @@ br.com.zukk.vivo.projectslicing
 ├── repository       → repositórios Spring Data
 ├── service          → regras de negócio
 |+++++ impl
-└── SlicingApplication.java
+└── DesafioVotacaoApplication.java
 ```
 
 ---
@@ -281,4 +281,4 @@ br.com.zukk.vivo.projectslicing
 
 ## 📄 Licença
 
-Distribuído para fins comerciais. Company: ZUKK SERVIÇOS EM TECNOLOGIA LTDA.
+Distribuído para fins comerciais. Company: Fernando Vieira.

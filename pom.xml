@@ -12,10 +12,10 @@
     </parent>
 
 	<groupId>br.com.zukk.vivo</groupId>
-	<artifactId>slicing-mgmt-system</artifactId>
+	<artifactId>desafio-votacao</artifactId>
     <version>1.0.0</version>
-	<name>slicing-mgmt-system</name>
-	<description>Projeto Slicing</description>
+	<name>desafio-votacao</name>
+	<description>Desafio Votação</description>
     <packaging>jar</packaging>
 
     <properties>

@@ -2,12 +2,14 @@ services:
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: db-slicing-mgmt-system
+      MYSQL_DATABASE: ${DB_NAME}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     ports:
       - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
     networks:
-      - slicing-network
+      - desafio-votacao-network
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 5s
@@ -15,24 +17,31 @@ services:
       retries: 20
 
   app:
-    container_name: slicing-mgmt-system
+    container_name: desafio-votacao
     build:
       context: .
       dockerfile: Dockerfile
+      network: host
     ports:
       - "8081:8080"
+    env_file:
+      - .env
     environment:
       SPRING_PROFILES_ACTIVE: docker
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db-slicing-mgmt-system
-      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_URL: ${DB_URL:-jdbc:mysql://mysql:3306/${DB_NAME}}
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
       SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
     depends_on:
       mysql:
         condition: service_healthy
     networks:
-      - slicing-network
+      - desafio-votacao-network
     restart: unless-stopped
 
 networks:
-  slicing-network:
+  desafio-votacao-network:
     driver: bridge
+
+volumes:
+  mysql_data:
+    driver: local

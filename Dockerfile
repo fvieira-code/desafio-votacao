@@ -11,7 +11,7 @@ WORKDIR /app
 
 # pega qualquer jar gerado (evitando .jar.original)
 #COPY --from=build /app/target/*.jar /app/app.jar
-COPY --from=build /app/target/slicing-mgmt-system-1.0.0.jar app.jar
+COPY --from=build /app/target/desafio-votacao-1.0.0.jar app.jar
 
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
