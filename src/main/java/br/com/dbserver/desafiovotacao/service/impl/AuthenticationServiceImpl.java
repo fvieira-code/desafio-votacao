@@ -100,7 +100,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public UserDTO getUsuarioLogado(String token) {
         String jwt = token.replace("Bearer ", "");
-        String email = jwtService.extractUserName(jwt); /* Método para extrair email/username do token */
+        String email = jwtService.extractUserName(jwt);
 
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado com e-mail: " + email));
