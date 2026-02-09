@@ -16,7 +16,7 @@ import static br.com.dbserver.desafiovotacao.dto.response.mobileui.FieldType.*;
 @RestController
 @RequestMapping("/api/v1/mobile")
 @RequiredArgsConstructor
-@Tag(name = "Mobile UI", description = "Endpoints que retornam telas (FORMULÁRIO/SELEÇÃO) para o app montar a UI.")
+@Tag(name = "Mobile desafio votação", description = "Endpoints que retornam telas (FORMULÁRIO/SELEÇÃO) para o aplicativo mobile.")
 public class MobileUiController {
 
     private static final String URL_CRIAR_PAUTA = "/api/v1/pautas";
