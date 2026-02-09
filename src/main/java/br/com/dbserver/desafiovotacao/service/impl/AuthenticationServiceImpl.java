@@ -7,7 +7,7 @@ import br.com.dbserver.desafiovotacao.dto.request.SigninRequest;
 import br.com.dbserver.desafiovotacao.dto.response.JwtAuthenticationResponse;
 import br.com.dbserver.desafiovotacao.exception.RecursoNaoEncontradoException;
 import br.com.dbserver.desafiovotacao.mapper.UserMapper;
-import br.com.dbserver.desafiovotacao.model.Role;
+import br.com.dbserver.desafiovotacao.model.enums.Role;
 import br.com.dbserver.desafiovotacao.model.User;
 import br.com.dbserver.desafiovotacao.repository.UserRepository;
 import br.com.dbserver.desafiovotacao.service.AuthenticationService;
@@ -100,7 +100,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public UserDTO getUsuarioLogado(String token) {
         String jwt = token.replace("Bearer ", "");
-        String email = jwtService.extractUserName(jwt); /* Método para extrair email/username do token */
+        String email = jwtService.extractUserName(jwt);
 
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado com e-mail: " + email));
