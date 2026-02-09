@@ -45,7 +45,7 @@ Este sistema permite:
 
 ### 2️⃣ Clonar o Repositório
    ```bash
-      git clone https://github.com/dbserver/desafio-votacao.git
+      git clone https://github.com/fvieira-code/desafio-votacao.git
    ```
 
 ### 3️⃣ Banco de Dados
